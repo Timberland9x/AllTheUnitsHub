@@ -1,6 +1,6 @@
 //output button
 function clicked(){
-    console.log("testing clicked");
+    console.log("Clicked Func");
 
     var num1 = document.getElementById("numInput").value;
     var num2 = document.getElementById("numInput2").value;

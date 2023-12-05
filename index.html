@@ -4,12 +4,43 @@
         <title>AllTheUnitsHub</title>
         <link rel="stylesheet" href="./styles.css">
         <script src="./backend.js"></script>
-        <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
     </head>
+
     <body>
+        <header>AllTheUnitsHub</header>
+
+        <nav>Saved Conversions</nav>
+
+        <select class = "unitsSelector" name="units" id="units">
+            <option value="length">Length</option>
+            <option value="temperture">Temperture</option>
+            <option value="time">Time</option>
+            <option value="mass">Mass</option>
+          </select>
+        <div class="inputsWrapper">
+        <div class="inputWrapper">
         <input class = "numInput" id="numInput" type="value">
+        <select name="unit1" id="unit1">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        <div class="inputWrapper">
         <input class = "numInput" id="numInput2" type="value">
+        <select name="unit2" id="unit2">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+    </div>
+
         <button id="click" onclick="clicked()">click me!</button>
+        <footer>Footer</footer>
     </body>
 
 
