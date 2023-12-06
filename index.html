@@ -10,8 +10,10 @@
     <body>
         <header>AllTheUnitsHub</header>
 
-        <nav>Saved Conversions</nav>
-
+        <nav><div>Convertor</div>
+            <div>Saved Conversions</div>
+        </nav>
+<div class = "conversionContainer">
         <select class = "unitsSelector" name="units" id="units">
             <option value="length">Length</option>
             <option value="temperture">Temperture</option>
@@ -20,26 +22,29 @@
           </select>
         <div class="inputsWrapper">
         <div class="inputWrapper">
-        <input class = "numInput" id="numInput" type="value">
+        <input class = "numInput" id="numInput" type="value" value=1>
         <select name="unit1" id="unit1">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="mile">Mile</option>
+            <option value="yard">Yard</option>
+            <option value="foot">Foot</option>
+            <option value="inch">Inch</option>
           </select>
         </div>
         <div class="inputWrapper">
-        <input class = "numInput" id="numInput2" type="value">
+        <input class = "numInput" id="numInput2" type="value" value=5>
         <select name="unit2" id="unit2">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="meter">Meter</option>
+            <option value="centimeter">Centimeter</option>
+            <option value="micrometer">Micrometer</option>
+            <option value="nanometer">Nanometer</option>
+
           </select>
         </div>
     </div>
-
         <button id="click" onclick="clicked()">click me!</button>
+</div>
+
         <footer>Footer</footer>
     </body>
 

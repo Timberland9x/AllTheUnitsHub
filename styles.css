@@ -1,14 +1,16 @@
 
-body{
-    padding: 0;
-    margin: 0;
+html, body{
+    padding: 0px;
+    margin: 0px;
+    min-height: 100%;
+    height: 100%;
 }
 
 header{
     height: 80px;
     margin: 0px;
     padding: 8px;
-    background-color: aqua;
+    background-color: #227DB7;
     text-align: center;
 }
 
@@ -19,26 +21,56 @@ nav{
     padding: 8px;
     background-color:antiquewhite;
 }
+.conversionContainer{
+    margin-left: 20px;
+    background-color: #E5E5E5;
+    width: 400px;
+    padding: 20px;
+}
 .inputsWrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px;
-    gap: 10px;
+    width: 420px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+    margin-bottom: 40px;
 }
 .inputWrapper{
     display: grid;
+    margin: 0px;
+    padding: 0px;
 }
 
 .numInput{
+    margin: 0px;
+    padding: 0px;
     width: 163px;
     height: 50px;
-    background-color:beige;
+    background-color:rgb(189, 160, 119, .8);
     text-align: center;
     font-size: 24px;
+    border: 0;
 }
 select{
     width: 163px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #e2eded;
+    border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+    background-color:rgb(225, 195, 153);
 }
+select:hover{
+    background-color:rgb(225, 195, 153, .7);
+}
+
 .unitsSelector{
     margin-bottom: 20px;
+    width: 375px;
 }
+
+
+
+footer {
+    background-color: #227DB7;
+    height: 32px;
+    padding: 8px;
+  }
