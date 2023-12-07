@@ -21,6 +21,19 @@ nav{
     padding: 8px;
     background-color:antiquewhite;
 }
+.calculatorIcon{
+    position: fixed;
+    right: 6px;
+    top: 200px;
+    height: 40px;
+    width: 34px;
+}
+
+.calculatorIcon:hover{
+    background-color: black;
+}
+
+
 .conversionContainer{
     margin-left: 20px;
     background-color: #E5E5E5;
