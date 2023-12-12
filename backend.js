@@ -18,13 +18,12 @@ var AllConversionNamesList = [];
 
 
 AllConversionNamesList.push(new conversionNames("Car"));
-
-AllConversionNamesList[0].addUnit("1", "Tank", "16", "Gallon"); //userinput
+AllConversionNamesList[AllConversionNamesList.length-1].addUnit("1", "Tank", "16", "Gallon"); //userinput
 AllConversionNamesList[0].addUnit("40", "Miles", "1", "Gallon"); //userinput
 
 
 AllConversionNamesList.push(new conversionNames("Length"));
-AllConversionNamesList[1].addUnit("12", "Inch", "1", "Feet"); //userinput
+AllConversionNamesList[AllConversionNamesList.length-1].addUnit("12", "Inch", "1", "Feet"); //userinput
 // console.log("Name of Unit: " + AllConversionNamesList[0].unitName + " and it's " + AllConversionNamesList[0].unitValue);
 console.log(AllConversionNamesList);
 
