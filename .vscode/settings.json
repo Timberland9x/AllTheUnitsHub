@@ -28,5 +28,6 @@
       "username": "root",
       "password": "1234"
     }
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }

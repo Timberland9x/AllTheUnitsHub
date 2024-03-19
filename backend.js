@@ -1,4 +1,10 @@
 import unit, { conversionNames } from './CreateConversion.js';
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+import { createClient } from '@supabase/supabase-js'
+const supabaseUrl = 'https://agbvtuxcuamqtmqqwstx.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+
 //output button
 function clicked(){
     console.log("Clicked Func");
@@ -13,6 +19,28 @@ function clicked(){
     console.log(outputDiv);
 
 }
+
+async function signUpNewUser() {
+    const { data, error } = await supabase.auth.signUp({
+      email: 'example@email.com',
+      password: 'example-password',
+      options: {
+        emailRedirectTo: 'https://example.com/welcome',
+      },
+    })
+  }
+
+async function signInWithEmail() {
+const { data, error } = await supabase.auth.signInWithPassword({
+    email: 'example@email.com',
+    password: 'example-password',
+})
+}
+
+async function signOut() {
+    const { error } = await supabase.auth.signOut()
+  }
+
 
 var AllConversionNamesList = [];
 
