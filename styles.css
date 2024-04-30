@@ -43,7 +43,7 @@ nav{
 .inputsWrapper{
     display: grid;
     width: 420px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1gifr 1fr;
     gap: 0px;
     margin-bottom: 40px;
 }
@@ -52,7 +52,13 @@ nav{
     margin: 0px;
     padding: 0px;
 }
+.equalSignWrapper{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
 
+}
 .numInput{
     margin: 0px;
     padding: 0px;
