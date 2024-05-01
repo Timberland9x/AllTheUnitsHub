@@ -1,12 +1,11 @@
-import { createClient } from '../node-modules/@supabase/supabase-js'
-const supabaseUrl = 'https://agbvtuxcuamqtmqqwstx.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+// import { createClient } from '../node-modules/@supabase/supabase-js'
+// const supabaseUrl = 'https://agbvtuxcuamqtmqqwstx.supabase.co'
+// const supabaseKey = process.env.SUPABASE_KEY
+// const supabase = createClient(supabaseUrl, supabaseKey)
 
-console.log(supabase);
-console.log("backend");
+// console.log(supabase);
+// console.log("backend");
 
-print("test")
 //output button
 function clicked() {
   console.log("Clicked Func");
@@ -61,7 +60,7 @@ input2.addEventListener("keyup", function () {
   else input1.value = "";
 });
 
-console.log(inputValue + " & " + inputValue2);
+// console.log(inputValue + " & " + inputValue2);
 
 // var AllConversionNamesList = [];
 
