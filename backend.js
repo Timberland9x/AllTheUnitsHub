@@ -1,8 +1,8 @@
-import unit, { conversionNames } from "./CreateConversion.js";
-// import { createClient } from "@supabase/supabase-js";
-const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// import unit, { conversionNames } from "./CreateConversion.js";
+// // import { createClient } from "@supabase/supabase-js";
+// const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
+// const supabaseKey = process.env.SUPABASE_KEY;
+// const supabase = createClient(supabaseUrl, supabaseKey);
 
 //output button
 function clicked() {
@@ -18,31 +18,39 @@ function clicked() {
   console.log(outputDiv);
 }
 
-async function signUpNewUser() {
-  const { data, error } = await supabase.auth.signUp({
-    email: "example@email.com",
-    password: "example-password",
-    options: {
-      emailRedirectTo: "https://example.com/welcome",
-    },
-  });
-}
+// async function signUpNewUser() {
+//   const { data, error } = await supabase.auth.signUp({
+//     email: "example@email.com",
+//     password: "example-password",
+//     options: {
+//       emailRedirectTo: "https://example.com/welcome",
+//     },
+//   });
+// }
 
-async function signInWithEmail() {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: "example@email.com",
-    password: "example-password",
-  });
-}
+// async function signInWithEmail() {
+//   const { data, error } = await supabase.auth.signInWithPassword({
+//     email: "example@email.com",
+//     password: "example-password",
+//   });
+// }
 
-async function signOut() {
-  const { error } = await supabase.auth.signOut();
-}
+// async function signOut() {
+//   const { error } = await supabase.auth.signOut();
+// }
 
-var input = document.getElementById("numInput");
-var inputValue = input.value;
+var input1 = document.getElementById("numInput1");
 var input2 = document.getElementById("numInput2");
-var inputValue2 = input2.value;
+input1.addEventListener("keyup", function () {
+  //convertion factor (ex ft -> in)
+  if (input1.value != "") input2.value = input1.value * 12;
+  else input2.value = "";
+});
+
+input2.addEventListener("keyup", function () {
+  if (input2.value != "") input1.value = input2.value / 12;
+  else input1.value = "";
+});
 
 console.log(inputValue + " & " + inputValue2);
 
