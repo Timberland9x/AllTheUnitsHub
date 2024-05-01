@@ -43,7 +43,7 @@ nav{
 .inputsWrapper{
     display: grid;
     width: 420px;
-    grid-template-columns: 1fr 1gifr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0px;
     margin-bottom: 40px;
 }

@@ -1,6 +1,5 @@
 import unit, { conversionNames } from "./CreateConversion.js";
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>;
-import { createClient } from "@supabase/supabase-js";
+// import { createClient } from "@supabase/supabase-js";
 const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
@@ -39,6 +38,13 @@ async function signInWithEmail() {
 async function signOut() {
   const { error } = await supabase.auth.signOut();
 }
+
+var input = document.getElementById("numInput");
+var inputValue = input.value;
+var input2 = document.getElementById("numInput2");
+var inputValue2 = input2.value;
+
+console.log(inputValue + " & " + inputValue2);
 
 var AllConversionNamesList = [];
 
