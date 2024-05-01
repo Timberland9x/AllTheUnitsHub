@@ -1,10 +1,12 @@
-import unit, { conversionNames } from './CreateConversion.js';
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '../node-modules/@supabase/supabase-js'
 const supabaseUrl = 'https://agbvtuxcuamqtmqqwstx.supabase.co'
 const supabaseKey = process.env.SUPABASE_KEY
 const supabase = createClient(supabaseUrl, supabaseKey)
 
+console.log(supabase);
+console.log("backend");
+
+print("test")
 //output button
 function clicked(){
     console.log("Clicked Func");
@@ -17,6 +19,12 @@ function clicked(){
     document.body.appendChild(outputDiv);
 
     console.log(outputDiv);
+
+}
+function solve(){
+  console.log("Clicked submit");
+  var pw = document.getElementById("password").value;
+  console.log(pw);
 
 }
 
@@ -42,17 +50,17 @@ async function signOut() {
   }
 
 
-var AllConversionNamesList = [];
+// var AllConversionNamesList = [];
 
 
-AllConversionNamesList.push(new conversionNames("Car"));
-AllConversionNamesList[AllConversionNamesList.length-1].addUnit("1", "Tank", "16", "Gallon"); //userinput
-AllConversionNamesList[0].addUnit("40", "Miles", "1", "Gallon"); //userinput
+// AllConversionNamesList.push(new conversionNames("Car"));
+// AllConversionNamesList[AllConversionNamesList.length-1].addUnit("1", "Tank", "16", "Gallon"); //userinput
+// AllConversionNamesList[0].addUnit("40", "Miles", "1", "Gallon"); //userinput
 
 
-AllConversionNamesList.push(new conversionNames("Length"));
-AllConversionNamesList[AllConversionNamesList.length-1].addUnit("12", "Inch", "1", "Feet"); //userinput
-// console.log("Name of Unit: " + AllConversionNamesList[0].unitName + " and it's " + AllConversionNamesList[0].unitValue);
-console.log(AllConversionNamesList);
+// AllConversionNamesList.push(new conversionNames("Length"));
+// AllConversionNamesList[AllConversionNamesList.length-1].addUnit("12", "Inch", "1", "Feet"); //userinput
+// // console.log("Name of Unit: " + AllConversionNamesList[0].unitName + " and it's " + AllConversionNamesList[0].unitValue);
+// console.log(AllConversionNamesList);
 
 // console.log(AllConversionNamesList[0].getUnitsList())
