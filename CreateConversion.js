@@ -1,8 +1,10 @@
 
 //Ex: Car, Length
 export class conversionNames{
-    constructor(name){
+    
     //Name of the conversion
+
+    constructor(name){
     this.name = name;
     this.unitsList = [];
     }
