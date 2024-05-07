@@ -39,8 +39,11 @@ function clicked() {
 //   const { error } = await supabase.auth.signOut();
 // }
 
+//Grab num from user input
 var input1 = document.getElementById("numInput1");
 var input2 = document.getElementById("numInput2");
+
+//key up from input will change
 input1.addEventListener("keyup", function () {
   //convertion factor (ex ft -> in)
   if (input1.value != "") input2.value = input1.value * 12;
@@ -54,6 +57,8 @@ input2.addEventListener("keyup", function () {
 
 console.log(inputValue + " & " + inputValue2);
 
+
+//Creating a new conversion 
 var AllConversionNamesList = [];
 
 AllConversionNamesList.push(new conversionNames("Car"));
