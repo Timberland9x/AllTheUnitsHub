@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>AllTheUnitsHub</title>
-        <link rel="stylesheet" href="./styles.css">
-        <script type="module" src="./backend.js"></script>
-        <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    </head>
+
+<head>
+    <title>AllTheUnitsHub</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./backend.js"></script>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
 
 <body>
     <img class="calculatorIcon" src="./images/calculator-solid.svg" alt="CalculatorIcon">
     <header>AllTheUnitsHub</header>
     <nav>
-        <div>Convertor</div>
-        <div>Saved Conversions</div>
+        <ul>
+            <li><a href="./index.html">Convertor</a></li>
+            <li><a href="./index.html">Saved Conversions</a></li>
+            <li><a href="./createConv.html">Create Conversion</a></li>
+        </ul>
     </nav>
     <div class="conversionContainer">
         <div class="allInputsWrapper">
@@ -26,37 +30,35 @@
             </div>
             <div class="inputWrapper1">
                 <input class="numInput" id="numInput1" type="value" value=1>
-                <select name="unit1" id="unit1">
+                <select class="unitSelect" name="unit1" id="unit1">
                     <option value="mile">Mile</option>
                     <option value="yard">Yard</option>
                     <option value="foot">Foot</option>
                     <option value="inch">Inch</option>
                 </select>
             </div>
-            <div class="equalSignWrapper">=</div>
+            <div class="equalSignWrapper">=
+            </div>
 
             <div class="inputWrapper2">
                 <input class="numInput" id="numInput2" type="value" value=5>
-                <select name="unit2" id="unit2">
+                <select class="unitSelect" name="unit2" id="unit2">
                     <option value="kilometer">Kilometer</option>
                     <option value="meter">Meter</option>
                     <option value="centimeter">Centimeter</option>
                     <option value="micrometer">Micrometer</option>
                     <option value="nanometer">Nanometer</option>
 
-          </select>
+                </select>
+            </div>
         </div>
-    </div>
-        <button id="click" onclick="clicked()">click me!</button>
+        <!-- <button id="click" onclick="clicked()">click me!</button>
 
         <h2>Confirm your signup</h2>
 
 <p>Follow this link to confirm your user:</p>
-<p><a href="{{ .ConfirmationURL }}">Confirm your mail</a></p>
+<p><a href="{{ .ConfirmationURL }}">Confirm your mail</a></p> -->
     </div>
-<p><a href="{{ .ConfirmationURL }}">Confirm your mail</a></p>
-
-</div>
 
     <footer>Footer</footer>
 </body>

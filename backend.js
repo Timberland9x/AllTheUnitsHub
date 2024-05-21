@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { createClient } from '../node-modules/@supabase/supabase-js'
 // const supabaseUrl = 'https://agbvtuxcuamqtmqqwstx.supabase.co'
 // const supabaseKey = process.env.SUPABASE_KEY
@@ -5,6 +6,13 @@
 
 // console.log(supabase);
 // console.log("backend");
+=======
+// import unit, { conversionNames } from "./CreateConversion.js";
+// // import { createClient } from "@supabase/supabase-js";
+// const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
+// const supabaseKey = process.env.SUPABASE_KEY;
+// const supabase = createClient(supabaseUrl, supabaseKey);
+>>>>>>> 7784c24334edec4818db953e81c714c2cc339a9b
 
 //output button
 function clicked() {
@@ -19,12 +27,15 @@ function clicked() {
 
   console.log(outputDiv);
 }
+<<<<<<< HEAD
 function solve(){
   console.log("Clicked submit");
   var pw = document.getElementById("password").value;
   console.log(pw);
 
 }
+=======
+>>>>>>> 7784c24334edec4818db953e81c714c2cc339a9b
 
 // async function signUpNewUser() {
 //   const { data, error } = await supabase.auth.signUp({
@@ -47,8 +58,11 @@ function solve(){
 //   const { error } = await supabase.auth.signOut();
 // }
 
+//Grab num from user input
 var input1 = document.getElementById("numInput1");
 var input2 = document.getElementById("numInput2");
+
+//key up from input will change
 input1.addEventListener("keyup", function () {
   //convertion factor (ex ft -> in)
   if (input1.value != "") input2.value = input1.value * 12;
@@ -60,20 +74,12 @@ input2.addEventListener("keyup", function () {
   else input1.value = "";
 });
 
-// console.log(inputValue + " & " + inputValue2);
-
-// var AllConversionNamesList = [];
+console.log(inputValue + " & " + inputValue2);
 
 
-// AllConversionNamesList.push(new conversionNames("Car"));
-// AllConversionNamesList[AllConversionNamesList.length-1].addUnit("1", "Tank", "16", "Gallon"); //userinput
-// AllConversionNamesList[0].addUnit("40", "Miles", "1", "Gallon"); //userinput
+//Creating a new conversion 
+var AllConversionNamesList = [];
 
-
-// AllConversionNamesList.push(new conversionNames("Length"));
-// AllConversionNamesList[AllConversionNamesList.length-1].addUnit("12", "Inch", "1", "Feet"); //userinput
-// // console.log("Name of Unit: " + AllConversionNamesList[0].unitName + " and it's " + AllConversionNamesList[0].unitValue);
-// console.log(AllConversionNamesList);
 AllConversionNamesList.push(new conversionNames("Car"));
 AllConversionNamesList[AllConversionNamesList.length - 1].addUnit(
   "1",
