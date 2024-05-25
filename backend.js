@@ -1,18 +1,8 @@
-<<<<<<< HEAD
-// import { createClient } from '../node-modules/@supabase/supabase-js'
-// const supabaseUrl = 'https://agbvtuxcuamqtmqqwstx.supabase.co'
-// const supabaseKey = process.env.SUPABASE_KEY
-// const supabase = createClient(supabaseUrl, supabaseKey)
-
-// console.log(supabase);
-// console.log("backend");
-=======
 // import unit, { conversionNames } from "./CreateConversion.js";
 // // import { createClient } from "@supabase/supabase-js";
 // const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
 // const supabaseKey = process.env.SUPABASE_KEY;
 // const supabase = createClient(supabaseUrl, supabaseKey);
->>>>>>> 7784c24334edec4818db953e81c714c2cc339a9b
 
 //output button
 function clicked() {
@@ -27,15 +17,11 @@ function clicked() {
 
   console.log(outputDiv);
 }
-<<<<<<< HEAD
-function solve(){
+function solve() {
   console.log("Clicked submit");
   var pw = document.getElementById("password").value;
   console.log(pw);
-
 }
-=======
->>>>>>> 7784c24334edec4818db953e81c714c2cc339a9b
 
 // async function signUpNewUser() {
 //   const { data, error } = await supabase.auth.signUp({
@@ -76,8 +62,7 @@ input2.addEventListener("keyup", function () {
 
 console.log(inputValue + " & " + inputValue2);
 
-
-//Creating a new conversion 
+//Creating a new conversion
 var AllConversionNamesList = [];
 
 AllConversionNamesList.push(new conversionNames("Car"));
