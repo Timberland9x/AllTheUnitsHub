@@ -1,4 +1,4 @@
-// import unit, { conversionNames } from "./CreateConversion.js";
+import unit, { conversionNames } from "./CreateConversion.js";
 // // import { createClient } from "@supabase/supabase-js";
 // const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
 // const supabaseKey = process.env.SUPABASE_KEY;
@@ -60,13 +60,15 @@ input2.addEventListener("keyup", function () {
   else input1.value = "";
 });
 
-console.log(inputValue + " & " + inputValue2);
+// console.log(inputValue + " & " + inputValue2);
 
 //Creating a new conversion
 var AllConversionNamesList = [];
+var createNew = new conversionNames("Car");
 
-AllConversionNamesList.push(new conversionNames("Car"));
-AllConversionNamesList[AllConversionNamesList.length - 1].addUnit(
+AllConversionNamesList.push(createNew.getName());
+//this works for arrays, probably diff for objects?
+AllConversionNamesList.find((item) => item.name === "Car").addUnit(
   "1",
   "Tank",
   "16",
@@ -83,5 +85,7 @@ AllConversionNamesList[AllConversionNamesList.length - 1].addUnit(
 ); //userinput
 // console.log("Name of Unit: " + AllConversionNamesList[0].unitName + " and it's " + AllConversionNamesList[0].unitValue);
 console.log(AllConversionNamesList);
-
+const newUnit = new conversionNames();
 // console.log(AllConversionNamesList[0].getUnitsList())
+
+function oneOfUnit(unitValue1, unitName1, unitValue2, unitName2) {}
