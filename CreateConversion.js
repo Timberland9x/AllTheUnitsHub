@@ -1,23 +1,55 @@
 //need to make a one to many connection for map
 
-let measurementName = [[]];
+let measurementName = new Map();
 
-measurementName[0][0]= "corner"
-measurementName[0].push("mile")
-
-measurementName.push("mile")
-measurementName.push("feet")
-measurementName[0].push("feet")
-
-// measurementName[1][1]= "1";
-
-console.log("Test!");
-for(let i = 0;  i < measurementName.length; i ++){
-  for(let j = 0;  j < measurementName[0].length; j ++){
-
-    console.log(measurementName[i][0-measurementName[0].length])
+function addNewmeasurementName(unitName1, unitValue1, unitName2, unitValue2){
+  if(measurementName.get(unitName1)){
+    measurementName.get(unitName1).set(unitName2, (unitValue2/unitValue1));
+  }
+  else{
+  measurementName.set(unitName1, new Map([
+    [unitName2,(unitValue2/unitValue1)]
+  ]));
+}
+if(measurementName.get(unitName2)){
+  measurementName.get(unitName2).set(unitName1, (unitValue1/unitValue2));
+}
+else{
+  measurementName.set(unitName2, new Map([
+    [unitName1,(unitValue1/unitValue2)]
+  ]));
 }
 }
+addNewmeasurementName("mile", 1, "kilometer", 1.60934)
+addNewmeasurementName("mile", 1, "Foot", 5280)
+addNewmeasurementName("Foot", 1, "Inch", 12)
+
+//find unitValue2 
+let countLoop = 0; 
+function convert (unitName1, unitValue1, unitName2) {
+  countLoop++;
+  console.log(countLoop)
+  if(measurementName.get(unitName1)){
+    console.log(measurementName.get(unitName1))
+    if(measurementName.get(unitName1).get(unitName2)){
+      return (unitValue1 * measurementName.get(unitName1).get(unitName2))
+    }
+    else{
+      console.log("Coverting last resort!")
+      console.log(convert(measurementName.get(unitName1).entries().next().value[0], unitValue1 * measurementName.get(unitName1).entries().next().value[1], unitName2)
+    )
+      return convert(measurementName.get(unitName1).entries().next().value[0], unitValue1 * measurementName.get(unitName1).entries().next().value[1], unitName2)
+      return "No conversion unit inbetween: " + unitName2
+    }
+  }
+  else {
+    return "No conversion unit: " + unitName1
+  }
+}
+// console.log(convert("mile" , 5, "Inch"));
+// let allUnits = measurementName.get("mile").get("Foot")
+console.log(convert("Inch" , 59000, "mile"))
+console.log(measurementName)
 
 //Ex: Car, Length
 export class conversionNames {
