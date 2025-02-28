@@ -4,6 +4,9 @@ import unit, { conversionNames } from "./CreateConversion.js";
 // const supabaseKey = process.env.SUPABASE_KEY;
 // const supabase = createClient(supabaseUrl, supabaseKey);
 
+function addNewmeasurementName() {
+  console.log("Running addNewmeasurementName2");
+}
 //output button
 function clicked() {
   console.log("Clicked Func");
