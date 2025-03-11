@@ -4,6 +4,7 @@
     <title>AllTheUnitsHub</title>
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" defer src="./backend.js"></script>
+
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   </head>
 
@@ -22,7 +23,7 @@
       </ul>
     </nav>
     <div class="conversionContainer">
-      <div class="allInputsWrapper">
+      <form id="allInputsWrapper" class="allInputsWrapper">
         <div class="inputWrapper0">
           <select class="unitsSelector" name="units" id="units">
             <option value="length">Length</option>
@@ -32,35 +33,72 @@
           </select>
         </div>
         <div class="inputWrapper1">
-          <input class="numInput" id="numInput1" type="value" value="1" />
-          <select class="unitSelect" name="unit1" id="unit1">
-            <option value="mile">Mile</option>
-            <option value="yard">Yard</option>
-            <option value="foot">Foot</option>
-            <option value="inch">Inch</option>
-          </select>
+          <input
+            class="numInput"
+            id="newNumInput1"
+            type="value"
+            placeholder="Enter Value (1)"
+          />
+          <input
+            class="unitSelect"
+            id="unitInput1"
+            type="text"
+            list="unit1"
+            placeholder="Enter Unit Name (Foot)"
+          />
+          <datalist class="unitSelect" name="unit2" id="unit1">
+            <option
+              type="text"
+              id="customOption"
+              placeholder="Enter a custom option"
+            ></option>
+            <option>Mile2</option>
+            <option>Yard</option>
+            <option>Foot</option>
+            <option>Inch</option>
+          </datalist>
         </div>
         <div class="equalSignWrapper">=</div>
 
         <div class="inputWrapper2">
-          <input class="numInput" id="numInput2" type="value" value="5" />
-
-          <select class="unitSelect" name="unit2" id="unit2">
+          <input
+            class="numInput"
+            id="newNumInput2"
+            type="value"
+            placeholder="Enter Value (12)"
+          />
+          <input
+            class="unitSelect"
+            id="unitInput2"
+            type="text"
+            list="unit2"
+            placeholder="Enter Unit Name (Inch)"
+          />
+          <datalist class="unitSelect" name="unit2" id="unit2">
             <option
               type="text"
               id="customOption"
-              onchange="addCustomOption()"
               placeholder="Enter a custom option"
             ></option>
-            <option value="kilometer">Kilometer</option>
-            <option value="meter">Meter</option>
-            <option value="centimeter">Centimeter</option>
-            <option value="micrometer">Micrometer</option>
-            <option value="nanometer">Nanometer</option>
-          </select>
+            <option>Kilometer</option>
+            <option>Meter</option>
+            <option>Centimeter</option>
+            <option>Micrometer</option>
+            <option>Nanometer</option>
+          </datalist>
+          <!-- <input type="text" list="cars" />
+          <datalist id="cars">
+            <option>Volvo</option>
+            <option>Saab</option>
+            <option>Mercedes</option>
+            <option>Audi</option>
+          </datalist> -->
         </div>
-        <button class="createConv">Create Conversion</button>
-      </div>
+        <div id="errorDiv"></div>
+        <button type="submit" id="createConvBut" class="createConvBut">
+          Create Conversion
+        </button>
+      </form>
 
       <!-- <button id="click" onclick="clicked()">click me!</button>
 

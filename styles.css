@@ -1,182 +1,216 @@
-
-html, body{
-    padding: 0px;
-    margin: 0px;
-    height: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-header{
-    font-weight: 600;
-    font-family: "Fantasy", "Courier New", monospace;
-    font-size: 2rem;
-    line-height: 1;
-    height: 80px;
-    margin: 0px;
-    padding: 8px;
-    background-color: #227DB7;
-    text-align: center;
+header {
+  font-weight: 600;
+  font-family: "Fantasy", "Courier New", monospace;
+  font-size: 2rem;
+  line-height: 1;
+  height: 80px;
+  margin: 0px;
+  padding: 8px;
+  background-color: #227db7;
+  text-align: center;
 }
 
-nav{
-    height: auto;
-    margin-bottom: 20px;
-    padding: 8px;
-    background-color:antiquewhite;
-    font-family: "Fantasy", "Courier New", monospace;
-    /* font-size: 24px;
+nav {
+  height: auto;
+  margin-bottom: 20px;
+  padding: 8px;
+  background-color: antiquewhite;
+  font-family: "Fantasy", "Courier New", monospace;
+  /* font-size: 24px;
     font-weight: 700; */
-    
-    
 }
 nav ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type:none;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
 }
 
-nav ul li{
-    background-color:rgb(222, 147, 7);
-    border-radius: 8px;
-    padding: 4px 10px 4px 8px;
-    margin-right: 10px;
-    margin-left: 10px;
+nav ul li {
+  background-color: rgb(222, 147, 7);
+  border-radius: 8px;
+  padding: 4px 10px 4px 8px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-nav ul li:hover{
-    background-color:rgba(222, 147, 7, 0.775);
-    text-decoration: underline;
+nav ul li:hover {
+  background-color: rgba(222, 147, 7, 0.775);
+  text-decoration: underline;
 }
 
-nav ul li a{    
-    text-decoration: none;
-    color: black;
+nav ul li a {
+  text-decoration: none;
+  color: black;
 }
 
-
-.calculatorIcon{
-    position: fixed;
-    right: 6px;
-    top: 200px;
-    height: 40px;
-    width: 34px;
+.calculatorIcon {
+  position: fixed;
+  right: 6px;
+  top: 200px;
+  height: 40px;
+  width: 34px;
 }
 
-.calculatorIcon:hover{
-    background-color: black;
+.calculatorIcon:hover {
+  background-color: black;
 }
 
 .conversionContainer {
-    margin-left: 20px;
-    background-color: #E5E5E5;
-    width: fit-content;
-    padding: 18px;
-    border-radius: 4px;
-    margin-bottom: 25px;
-    display: grid;
-    grid-template-columns: repeat(7, 50px);
-    grid-template-rows: 3;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+  margin-left: 20px;
+  background-color: #e5e5e5;
+  width: fit-content;
+  padding: 18px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  display: grid;
+  /* grid-template-columns: fit-content(40%) fit-content(40%) 1fr; */
+  grid-template-rows: 3;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
 }
 
-.allInputsWrapper{
-    display: grid;
-    grid-template-columns: repeat(7, 50px);
-    grid-template-rows: 3;
-    
+.allInputsWrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 58px);
+  grid-template-rows: 3;
 }
-.allInputsWrapper *  {
-    /* border: dashed 2px pink; */
-}
-
-.inputWrapper0{
-    grid-column: 1/8;
-    grid-row: 1;
-    display: grid;
-}
-.unitsSelector{
-    width: 100%;
-    height: 24px;
-    margin-bottom: 8px;
+.allInputsWrapper * {
+  /* border: dashed 2px pink; */
 }
 
-.inputWrapper1{
-    grid-column: 1/4;
-    grid-row: 2;
+.inputWrapper0 {
+  grid-column: 1/8;
+  grid-row: 1;
+  display: grid;
 }
-.inputWrapper2{
-    grid-column: 5/8;
-    grid-row: 2;
-}
-.equalSignWrapper{
-    display: grid;
-    grid-column: 4;
-    grid-row: 2;
-    text-align: center;
-    align-items: center;
-    font-family: "Fantasy", "Courier New", monospace;
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.numInput{
-    margin: 0px;
-    padding: 0px;
-    width: 99%;
-    height: 50px;
-    background-color:rgb(189, 160, 119, .8);
-    text-align: center;
-    font-size: 24px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 1px;
-
+.unitsSelector {
+  width: 100%;
+  height: 24px;
+  margin-bottom: 8px;
 }
 
-.unitSelect{
-    width: 99.99%;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-top: none;
-    
+.inputWrapper1 {
+  grid-column: 1/4;
+  grid-row: 2;
 }
-select{
-    border-radius: 1px;
-    height: 22px;
-    margin: 0px;
-    padding: 0px;
-    background-color:rgb(225, 195, 153);
+.inputWrapper2 {
+  grid-column: 5/8;
+  grid-row: 2;
 }
-select:hover{
-    background-color:rgb(225, 195, 153, .7);
+.equalSignWrapper {
+  display: grid;
+  grid-column: 4;
+  grid-row: 2;
+  text-align: center;
+  align-items: center;
+  font-family: "Fantasy", "Courier New", monospace;
+  font-size: 27px;
+  font-weight: 2500;
+  margin-bottom: 20px;
+}
+.numInput {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(189, 160, 119, 0.8);
+  text-align: center;
+  font-size: 23px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 1px;
+}
+.numInput input:focus {
+  outline: 0;
+}
+.numInput.success {
+  border-width: 2px;
+  border-color: green;
 }
 
-.createConv{
-    display: grid;  
-    grid-column: 2/7;
-    grid-row: 3;
-    width: 100%;
-    height: 24px;
-    margin-top: 20px;
-    border-radius: 10px;
-    justify-content: center;  
-    align-items: center;  
-    background-color:rgb(225, 195, 153);
-
+.numInput.error {
+  border-width: 2px;
+  border-color: red;
+}
+.unitSelect {
+  width: 100%;
+  height: 24px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-top: none;
+  background-color: rgb(189, 160, 119, 0.8);
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
 }
 
+.unitSelect input:focus {
+  outline: 0;
+}
+
+.unitSelect.success {
+  border-width: 2px;
+  border-color: green;
+}
+
+.unitSelect.error {
+  border-width: 2px;
+  border-color: red;
+}
+select {
+  border-radius: 1px;
+  height: 22px;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(225, 195, 153);
+}
+select:hover {
+  background-color: rgb(225, 195, 153, 0.7);
+}
+
+#errorDiv {
+  display: grid;
+  font-size: 14px;
+  grid-column: 1/7;
+  grid-row: 4;
+  width: 100%;
+  margin-top: 20px;
+  color: red;
+}
+
+#errorDiv.success {
+  color: green;
+}
+
+.createConvBut {
+  display: grid;
+  grid-column: 2/7;
+  grid-row: 3;
+  width: 100%;
+  height: 24px;
+  margin-top: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(225, 195, 153);
+}
 
 footer {
-    background-color: #227DB7;
-    height: 32px;
-    padding: 8px;
-    margin-top: auto;
-  }
-
-  
+  background-color: #227db7;
+  height: 32px;
+  padding: 8px;
+  margin-top: auto;
+}

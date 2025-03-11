@@ -1,12 +1,15 @@
-import unit, { conversionNames } from "./CreateConversion.js";
+console.log("Running backend");
+
+import {
+  measurementName,
+  addNewmeasurementName,
+  convert,
+} from "./CreateConversion.js";
 // // import { createClient } from "@supabase/supabase-js";
 // const supabaseUrl = "https://agbvtuxcuamqtmqqwstx.supabase.co";
 // const supabaseKey = process.env.SUPABASE_KEY;
 // const supabase = createClient(supabaseUrl, supabaseKey);
 
-function addNewmeasurementName() {
-  console.log("Running addNewmeasurementName2");
-}
 //output button
 function clicked() {
   console.log("Clicked Func");
@@ -48,47 +51,114 @@ function solve() {
 // }
 
 //Grab num from user input
-var input1 = document.getElementById("numInput1");
-var input2 = document.getElementById("numInput2");
+const unitsSelector = document.getElementById("unitsSelector");
+const newNumInput1 = document.getElementById("newNumInput1");
+const newNumInput2 = document.getElementById("newNumInput2");
+const unitInput1 = document.getElementById("unitInput1");
+const unitInput2 = document.getElementById("unitInput2");
+const datalist1 = document.getElementById("unit1");
+const dataList2 = document.getElementById("unit2");
+const createConvEl = document.getElementById("createConvBut");
+const allInputsWrapper = document.getElementById("allInputsWrapper");
+
+// const errorDiv = document.getElementById("errorDiv");
 
 //key up from input will change
-input1.addEventListener("keyup", function () {
-  //convertion factor (ex ft -> in)
-  if (input1.value != "") input2.value = input1.value * 12;
-  else input2.value = "";
+// input1.addEventListener("keyup", function () {
+//   //convertion factor (ex ft -> in)
+//   if (input1.value != "") input2.value = input1.value * 12;
+//   else input2.value = "";
+// });
+
+// input2.addEventListener("keyup", function () {
+//   if (input2.value != "") input1.value = input2.value / 12;
+//   else input1.value = "";
+// });
+allInputsWrapper.addEventListener("submit", (e) => {
+  console.log("Running submit!");
+  e.preventDefault();
+  let allGood = true;
+  const newNumInput1Val = newNumInput1.value.trim();
+  const newNumInputVal2 = newNumInput1.value.trim();
+  const unitInputVal1 = unitInput1.value.trim();
+  const unitInputVal2 = unitInput1.value.trim();
+
+  if (newNumInput1Val === "" || newNumInput1Val == null) {
+    setError(newNumInput1, "Enter a number");
+    allGood = false;
+  } else {
+    setSuccess(newNumInput1);
+  }
+  if (newNumInputVal2 === "" || newNumInputVal2 == null) {
+    setError(newNumInput2, "Enter a number");
+    allGood = false;
+  } else {
+    setSuccess(newNumInput2);
+  }
+  if (unitInputVal1 === "" || unitInputVal1 == null) {
+    setError(unitInput1, "Enter a Unit name");
+    allGood = false;
+  } else {
+    setSuccess(unitInput1);
+  }
+  if (unitInputVal2 === "" || unitInputVal2 == null) {
+    setError(unitInput2, "Enter a Unit name");
+    allGood = false;
+  } else {
+    setSuccess(unitInput2);
+  }
+  if (allGood) {
+    errorDiv.classList.add("success");
+    errorDiv.innerText =
+      "Successfully added: " +
+      newNumInput1Val +
+      " " +
+      unitInputVal1 +
+      " = " +
+      unitInputVal2 +
+      " " +
+      newNumInputVal2;
+
+    addNewmeasurementName(
+      unitInputVal1,
+      newNumInput1Val,
+      unitInputVal2,
+      newNumInputVal2
+    );
+  }
+  console.log(measurementName);
 });
 
-input2.addEventListener("keyup", function () {
-  if (input2.value != "") input1.value = input2.value / 12;
-  else input1.value = "";
-});
+const setError = (element, message) => {
+  const inputControl = element;
+  const errorDiv = document.getElementById("errorDiv");
 
-// console.log(inputValue + " & " + inputValue2);
+  errorDiv.innerText = message;
+  inputControl.classList.add("error");
+  inputControl.classList.remove("success");
+};
 
-//Creating a new conversion
-var AllConversionNamesList = [];
-var createNew = new conversionNames("Car");
+const setSuccess = (element) => {
+  const inputControl = element;
+  const errorDiv = document.getElementById("errorDiv");
 
-AllConversionNamesList.push(createNew.getName());
-//this works for arrays, probably diff for objects?
-AllConversionNamesList.find((item) => item.name === "Car").addUnit(
-  "1",
-  "Tank",
-  "16",
-  "Gallon"
-); //userinput
-AllConversionNamesList[0].addUnit("40", "Miles", "1", "Gallon"); //userinput
+  errorDiv.innerText = "";
+  inputControl.classList.add("success");
+  inputControl.classList.remove("error");
+};
+//Adding new custom convertion
+function addCustomOption() {}
+const createConvButt = document.querySelector(".createConv");
+// createConvButt.addEventListener("click", addNewmeasurementName);
 
-AllConversionNamesList.push(new conversionNames("Length"));
-AllConversionNamesList[AllConversionNamesList.length - 1].addUnit(
-  "12",
-  "Inch",
-  "1",
-  "Feet"
-); //userinput
-// console.log("Name of Unit: " + AllConversionNamesList[0].unitName + " and it's " + AllConversionNamesList[0].unitValue);
-console.log(AllConversionNamesList);
-const newUnit = new conversionNames();
-// console.log(AllConversionNamesList[0].getUnitsList())
-
-function oneOfUnit(unitValue1, unitName1, unitValue2, unitName2) {}
+const unitsSelectorDropDown = document.querySelector(".unitsSelector");
+// // Populate dropdown with units
+// function populateDropdown() {
+//   unitsSelectorDropDown.innerHTML = ""; // Clear old options
+//   for (const [key] of measurementName) {
+//     const option = document.createElement("option");
+//     option.value = key;
+//     option.textContent = key;
+//     unitsSelectorDropDown.appendChild(option);
+//   }
+// }
