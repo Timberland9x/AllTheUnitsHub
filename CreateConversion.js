@@ -1,4 +1,9 @@
-export { measurementName, addNewmeasurementName, convert };
+export {
+  measurementName,
+  addNewmeasurementName,
+  convert,
+  saveMeasurementsToLocalStorage,
+};
 
 //need to make a one to many connection for map
 let measurementName = new Map();
@@ -21,9 +26,55 @@ function addNewmeasurementName(unitName1, unitValue1, unitName2, unitValue2) {
       new Map([[unitName1, unitValue1 / unitValue2]])
     );
   }
+  saveMeasurementsToLocalStorage();
 }
+
+// Function to save measurementName to localStorage
+function saveMeasurementsToLocalStorage() {
+  // First, load existing data from localStorage (if any)
+  let storedData = localStorage.getItem("measurements");
+
+  let measurementsArray = [];
+
+  if (storedData) {
+    // Parse existing data from localStorage
+    measurementsArray = JSON.parse(storedData);
+    // Merge the existing data with the current map
+    measurementsArray = mergeMaps(measurementsArray, measurementName);
+  } else {
+    // If no existing data, just convert the current map to an array
+    measurementsArray = Array.from(measurementName, ([unitName, unitMap]) => {
+      return [unitName, Array.from(unitMap)];
+    });
+  }
+
+  // Store the merged measurements array back to localStorage
+  localStorage.setItem("measurements", JSON.stringify(measurementsArray));
+  console.log("Saved to localStorage:", measurementsArray);
+}
+
+// Function to merge two Maps (existing data from localStorage and current measurementName)
+function mergeMaps(existingData, currentData) {
+  existingData.forEach(([unitName, unitMap]) => {
+    // Ensure we're merging the unitMap correctly
+    if (!currentData.has(unitName)) {
+      currentData.set(unitName, new Map(unitMap));
+    } else {
+      const existingUnitMap = currentData.get(unitName);
+      unitMap.forEach(([unitName2, value]) => {
+        existingUnitMap.set(unitName2, value);
+      });
+    }
+  });
+
+  // Convert the merged map to an array of arrays
+  return Array.from(currentData, ([unitName, unitMap]) => {
+    return [unitName, Array.from(unitMap)];
+  });
+}
+
 //Test input
-// addNewmeasurementName("Foot", 1, "Inch", 12);
+addNewmeasurementName("Foot", 1, "Inch", 12);
 // // addNewmeasurementName("mile", 1, "Foot", 5280);
 // addNewmeasurementName("meter", 1, "Foot", 3.28084);
 // addNewmeasurementName("mile", 1, "Inch", 63360);
@@ -60,7 +111,7 @@ function convert(unitName1, unitValue1, unitName2, visited = new Set()) {
 
 // console.log(convert("Inch", 1000, "mile"));
 // console.log(convert("Foot", 2, "kilometer"));
-// console.log(measurementName);
+console.log(measurementName);
 
 // Function to add custom unit to dropdown and map
 
@@ -87,7 +138,7 @@ export class conversionNames {
 //Ex: Tank, Gallons, Dollar, Miles, Feet, Inches
 export default class unit {
   constructor(unitValue1, unitName1, unitValue2, unitName2) {
-    console.log("Create new Unit!");
+    // console.log("Create new Unit!");
     this.unitValue1 = unitValue1;
     this.unitName1 = unitName1;
     this.unitValue2 = unitValue2;
