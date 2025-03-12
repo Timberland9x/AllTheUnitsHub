@@ -126,35 +126,37 @@ const unit2 = document.getElementById("unit2");
 
 //key up from input will change
 //convert(unitName1, unitValue1, unitName2)
-numInput1.addEventListener("keyup", function () {
-  //convertion factor (ex ft -> in)
-  convert(unit1.value, numInput1.value, unit2.value);
-  if (numInput1.value != "") {
-    numInput2.value = 0;
-    numInput2.value = convert(unit1.value, numInput1.value, unit2.value);
-  } else numInput2.value = "";
-});
+if (document.getElementById("numInput1"))
+  numInput1.addEventListener("keyup", function () {
+    //convertion factor (ex ft -> in)
+    convert(unit1.value, numInput1.value, unit2.value);
+    if (numInput1.value != "") {
+      numInput2.value = 0;
+      numInput2.value = convert(unit1.value, numInput1.value, unit2.value);
+    } else numInput2.value = "";
+  });
 
-numInput2.addEventListener("keyup", function () {
-  if (numInput2.value != "") {
-    numInput1.value = 0;
-    numInput1.value = convert(unit2.value, numInput2.value, unit1.value);
-  } else numInput1.value = "";
-});
-
-unit1.addEventListener("click", function () {
-  //convertion factor (ex ft -> in)
-  convert(unit1.value, numInput1.value, unit2.value);
-  if (numInput1.value != "") {
-    numInput2.value = convert(unit1.value, numInput1.value, unit2.value);
-  } else numInput2.value = "";
-});
-
-unit2.addEventListener("click", function () {
-  if (numInput2.value != "") {
-    numInput1.value = convert(unit2.value, numInput2.value, unit1.value);
-  } else numInput1.value = "";
-});
+if (document.getElementById("numInput2"))
+  numInput2.addEventListener("keyup", function () {
+    if (numInput2.value != "") {
+      numInput1.value = 0;
+      numInput1.value = convert(unit2.value, numInput2.value, unit1.value);
+    } else numInput1.value = "";
+  });
+if (document.getElementById("unit1"))
+  unit1.addEventListener("click", function () {
+    //convertion factor (ex ft -> in)
+    convert(unit1.value, numInput1.value, unit2.value);
+    if (numInput1.value != "") {
+      numInput2.value = convert(unit1.value, numInput1.value, unit2.value);
+    } else numInput2.value = "";
+  });
+if (document.getElementById("unit2"))
+  unit2.addEventListener("click", function () {
+    if (numInput2.value != "") {
+      numInput1.value = convert(unit2.value, numInput2.value, unit1.value);
+    } else numInput1.value = "";
+  });
 
 if (allInputsWrapper)
   allInputsWrapper.addEventListener("submit", (e) => {
