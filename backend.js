@@ -129,29 +129,31 @@ const unit2 = document.getElementById("unit2");
 numInput1.addEventListener("keyup", function () {
   //convertion factor (ex ft -> in)
   convert(unit1.value, numInput1.value, unit2.value);
-  if (numInput1.value != "")
+  if (numInput1.value != "") {
+    numInput2.value = 0;
     numInput2.value = convert(unit1.value, numInput1.value, unit2.value);
-  else numInput2.value = "";
+  } else numInput2.value = "";
 });
 
 numInput2.addEventListener("keyup", function () {
-  if (numInput2.value != "")
-    numInput1.value = convert(unit1.value, numInput1.value, unit2.value);
-  else numInput1.value = "";
+  if (numInput2.value != "") {
+    numInput1.value = 0;
+    numInput1.value = convert(unit2.value, numInput2.value, unit1.value);
+  } else numInput1.value = "";
 });
 
 unit1.addEventListener("click", function () {
   //convertion factor (ex ft -> in)
   convert(unit1.value, numInput1.value, unit2.value);
-  if (numInput1.value != "")
+  if (numInput1.value != "") {
     numInput2.value = convert(unit1.value, numInput1.value, unit2.value);
-  else numInput2.value = "";
+  } else numInput2.value = "";
 });
 
 unit2.addEventListener("click", function () {
-  if (numInput2.value != "")
-    numInput1.value = convert(unit1.value, numInput1.value, unit2.value);
-  else numInput1.value = "";
+  if (numInput2.value != "") {
+    numInput1.value = convert(unit2.value, numInput2.value, unit1.value);
+  } else numInput1.value = "";
 });
 
 if (allInputsWrapper)
